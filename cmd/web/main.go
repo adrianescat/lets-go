@@ -27,8 +27,7 @@ func main() {
 	srv := &http.Server{
 		Addr:     *addr,
 		ErrorLog: errorLog,
-		// Call the new app.routes() method to get the servemux containing our routes.
-		Handler: app.routes(),
+		Handler:  app.routes(),
 	}
 
 	infoLog.Printf("Starting server on %s", *addr)
