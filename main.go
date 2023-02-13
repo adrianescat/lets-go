@@ -29,13 +29,13 @@ func snippetCreate(w http.ResponseWriter, r *http.Request) {
 		// Use the Header().Set() method to add an 'Allow: POST' header to the
 		// response header map. The first parameter is the header name, and
 		// the second parameter is the header value.
-		w.Header().Set("Allow", "POST") // Can be called just once per response
-		w.WriteHeader(405)              // Can be called just once per response
+		w.Header().Set("Allow", http.MethodPost) // Can be called just once per response
+		w.WriteHeader(405)                       // Can be called just once per response
 
 		// Use the http.Error() function to send a 405 status code and "Method Not
 		// Allowed" string as the response body. Passing our http.ResponseWriter to
 		// another function, which sends a response to the user for us.
-		http.Error(w, "Method Not Allowed", 405)
+		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
 	}
 
