@@ -12,7 +12,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// Add a templateCache field to the application struct.
 type application struct {
 	errorLog      *log.Logger
 	infoLog       *log.Logger
@@ -36,7 +35,6 @@ func main() {
 
 	defer db.Close()
 
-	// Initialize a new template cache...
 	templateCache, err := newTemplateCache()
 	if err != nil {
 		errorLog.Fatal(err)
