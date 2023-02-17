@@ -66,7 +66,7 @@ func (m *SnippetModel) Latest() ([]*Snippet, error) {
 
 	defer rows.Close()
 
-	snippets := []*Snippet{}
+	var snippets []*Snippet
 
 	for rows.Next() {
 		s := &Snippet{}
