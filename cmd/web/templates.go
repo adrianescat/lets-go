@@ -8,7 +8,6 @@ import (
 	"github.com/adrianescat/lets-go/internal/models"
 )
 
-// Add a Form field with the type "any".
 type templateData struct {
 	CurrentYear int
 	Snippet     *models.Snippet
