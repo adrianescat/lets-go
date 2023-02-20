@@ -78,6 +78,6 @@ func TestSecureHeaders(t *testing.T) {
 	}
 
 	bytes.TrimSpace(body)
-	
+
 	assert.Equal(t, string(body), "OK")
 }
